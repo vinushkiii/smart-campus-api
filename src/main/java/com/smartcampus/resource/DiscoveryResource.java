@@ -10,14 +10,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-
 @Path("/")
 @Produces(MediaType.APPLICATION_JSON)
 public class DiscoveryResource {
 
     @GET
     public Response getApiInfo() {
-        // Build response as a plain String to guarantee clean JSON output
         String json = "{"
             + "\"version\": \"1.0\","
             + "\"name\": \"Smart Campus Sensor and Room Management API - vinushki fernando\","
@@ -29,5 +27,13 @@ public class DiscoveryResource {
             + "}"
             + "}";
         return Response.ok(json).build();
+    }
+
+    @GET
+    @Path("/debug/crash")
+    public Response crash() {
+        String s = null;
+        s.length();
+        return Response.ok().build();
     }
 }
