@@ -19,10 +19,7 @@
     </properties>
 
     <dependencies>
-        <!--
-            Java EE 8 API - scope "provided" because Payara server
-            already includes this at runtime. We only need it to compile.
-        -->
+       
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
